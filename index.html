@@ -187,7 +187,8 @@ section{padding-block:clamp(56px,9vw,112px)}
 /* kids */
 .kids-head{display:grid;grid-template-columns:1fr minmax(260px,400px);gap:clamp(24px,5vw,72px);align-items:center}
 .kids-head h2{font-size:clamp(26px,4vw,48px);line-height:1.4}
-.nw{display:inline-block;white-space:nowrap}
+.nw{display:inline-block;white-space:nowrap;max-width:100%}
+.hosp-list .nw{white-space:normal}
 .kids-head h2 em{font-style:normal;color:var(--accent)}
 .girls{margin:0;display:flex;flex-direction:column;gap:14px}
 .girls img{width:100%;height:auto;aspect-ratio:670/760;object-fit:cover;border-radius:20px;background:var(--bg-alt)}
@@ -519,9 +520,9 @@ p,dd,figcaption,.goose,.ref b,.ref span{text-wrap:pretty}
         <dl class="hosp-list">
           <div><dt>北海道</dt><dd>北海道大学病院</dd></div>
           <div><dt>東北</dt><dd>東北大学病院</dd></div>
-          <div><dt>関東・甲信越</dt><dd>国立成育医療研究センター／東京都立小児総合医療センター／埼玉県立小児医療センター／神奈川県立こども医療センター</dd></div>
-          <div><dt>東海・北陸</dt><dd>名古屋大学医学部附属病院／三重大学医学部附属病院／静岡県立こども病院</dd></div>
-          <div><dt>近畿</dt><dd>京都大学医学部附属病院／京都府立医科大学附属病院／大阪市立総合医療センター／兵庫県立こども病院</dd></div>
+          <div><dt>関東・甲信越</dt><dd><span class="nw">国立成育医療研究センター／</span><span class="nw">東京都立小児総合医療センター／</span><span class="nw">埼玉県立小児医療センター／</span><span class="nw">神奈川県立こども医療センター</span></dd></div>
+          <div><dt>東海・北陸</dt><dd><span class="nw">名古屋大学医学部附属病院／</span><span class="nw">三重大学医学部附属病院／</span><span class="nw">静岡県立こども病院</span></dd></div>
+          <div><dt>近畿</dt><dd><span class="nw">京都大学医学部附属病院／</span><span class="nw">京都府立医科大学附属病院／</span><span class="nw">大阪市立総合医療センター／</span><span class="nw">兵庫県立こども病院</span></dd></div>
           <div><dt>中国・四国</dt><dd>広島大学病院</dd></div>
           <div><dt>九州・沖縄</dt><dd>九州大学病院</dd></div>
         </dl>
@@ -644,4 +645,26 @@ p,dd,figcaption,.goose,.ref b,.ref span{text-wrap:pretty}
 })();
 </script>
 
+<script>
+/* keep the last few characters of each text block together so no line ends with 1-3 stray characters */
+(function(){
+  var sel='main p, main dd, main figcaption, main h1, main h2, main h3, main .ref b, main .ref span, main .goose, main .gain p, main .personal b, main .career span, main .career b, main .facts b, main .cost b, main .cost span, main .timeline b, main .card h3, main .card strong, main .money .row span, main .tag b, main .support .card p, main .hosp-list .nw';
+  var KEEP=5;
+  document.querySelectorAll(sel).forEach(function(el){
+    if(el.closest('.num')||el.dataset.glued) return;
+    var node=el.lastChild;
+    while(node && node.nodeType===3 && !node.data.trim()) node=node.previousSibling;
+    if(!node || node.nodeType!==3) return;
+    var t=node.data.replace(/\s+$/,'');
+    if(t.length<KEEP+2) return;
+    var head=t.slice(0,t.length-KEEP), tail=t.slice(t.length-KEEP);
+    var span=document.createElement('span');
+    span.style.whiteSpace='nowrap';
+    span.textContent=tail;
+    node.data=head;
+    node.parentNode.insertBefore(span,node.nextSibling);
+    el.dataset.glued='1';
+  });
+})();
+</script>
 </body></html>
