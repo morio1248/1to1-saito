@@ -262,6 +262,21 @@ section{padding-block:clamp(56px,9vw,112px)}
 .copy-msg{font-size:13px;color:var(--muted)}
 @media (max-width:860px){.intro-grid{grid-template-columns:1fr}}
 .credit{text-align:center;font-size:12px;color:var(--muted);padding-top:48px}
+
+/* aflac info divider */
+.info-divider{background:var(--navy);color:var(--on-navy);padding-block:clamp(40px,6vw,64px)}
+.info-divider .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.info-divider .tag-pill{display:inline-flex;font-size:12px;font-weight:700;letter-spacing:.16em;padding:5px 16px;border-radius:999px;background:var(--coral);color:#1F2A37}
+.info-divider h2{font-size:clamp(22px,3vw,32px);line-height:1.5;text-wrap:balance}
+.info-divider p{color:var(--on-navy-2);font-size:15px}
+.info-divider .arrow{width:28px;height:28px;stroke:var(--coral);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:4px}
+.info-end{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.08em}
+.info-end::before,.info-end::after{content:"";flex:1;height:1px;background:var(--line-strong)}
+/* key in gains */
+.gain-key{background:var(--blush);border-radius:18px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:8px}
+.gain-key small{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--blush-ink)}
+.gain-key .big{font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.55;color:var(--ink)}
+.gain-key .sm{color:var(--ink-2);font-size:15px}
 </style>
 
 <main>
@@ -360,6 +375,11 @@ section{padding-block:clamp(56px,9vw,112px)}
       <div class="gain"><b>S</b><div><small>Skills スキル</small><p>がん保険の提案、空手（8年）、剣道（3年）</p></div></div>
       <div class="gain dark"><small>誰も知らない私</small><p style="font-weight:700">一人でご飯を食べるのが苦手。一人でラーメン屋に行ったこともありません。ぜひご一緒に。</p></div>
     </div>
+    <div class="gain-key">
+      <small>MY KEY TO SUCCESS</small>
+      <p class="big">家庭にとって本当に必要な保険はなにか？を、一緒に考えること。</p>
+      <p class="sm">強い願望は、小児がんの保険の大切さを伝えること。そして引退後は、トマトの水耕栽培。</p>
+    </div>
     <div class="personal">
       <div><small>家族</small><b>妻、長女（2歳）、次女（0歳）</b></div>
       <div><small>ペット</small><b>キャバリア2匹（リア・ロキ）、ヒガシヘルマンリクガメ（もなか）、文鳥（そぼろ）</b></div>
@@ -415,6 +435,14 @@ section{padding-block:clamp(56px,9vw,112px)}
   </div>
 </section>
 
+<section class="info-divider" aria-label="アフラックの商品のご案内">
+  <div class="wrap">
+    <span class="tag-pill">INFORMATION</span>
+    <h2>ここからは、アフラックの<br>がん保険に関するご案内です</h2>
+    <p>小児がんの現状と、お子さまのための備えについてまとめました。</p>
+    <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg>
+  </div>
+</section>
 <section id="kids" class="white">
   <div class="wrap" style="display:flex;flex-direction:column;gap:clamp(40px,6vw,72px)">
     <div class="kids-head">
@@ -531,16 +559,10 @@ section{padding-block:clamp(56px,9vw,112px)}
     <p class="closing">お子さまが元気な今のうちに、<br>一度だけ一緒に考えませんか。</p>
 
     <p class="sources">出典：国立がん研究センターがん情報サービス「がん統計」（全国がん登録）をもとにアフラック作成／全国がん登録 2016年診断例（5年純生存率）／厚生労働省「小児がん拠点病院の指定について」（2023年4月〜2027年3月の指定）／小児慢性特定疾病情報センター（自己負担上限月額／2026年時点）。制度は改定される場合があります。</p>
+    <p class="info-end">アフラックのご案内はここまでです</p>
   </div>
 </section>
 
-<section>
-  <div class="wrap key">
-    <span class="eyebrow">MY KEY TO SUCCESS</span>
-    <p class="big">家庭にとって本当に必要な保険はなにか？<br>を、一緒に考えること。</p>
-    <p class="sm">強い願望は、小児がんの保険の大切さを伝えること。そして引退後は、トマトの水耕栽培。</p>
-  </div>
-</section>
 
 <section id="intro" class="alt">
   <div class="wrap">
