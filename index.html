@@ -261,6 +261,17 @@ section{padding-block:clamp(56px,9vw,112px)}
 .support .card small{font-size:12px;font-weight:700;color:var(--accent)}
 .support .card strong{font-size:15px;margin-top:4px}
 .closing{text-align:center;font-size:clamp(23px,3vw,34px);font-weight:700;line-height:1.55;text-wrap:balance}
+.prod-link{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--bg);border:1.5px solid var(--line-strong);border-radius:16px;padding:18px 24px;text-decoration:none;color:var(--ink)}
+.prod-link:hover{border-color:var(--accent)}
+.prod-text{display:flex;flex-direction:column;line-height:1.5}
+.prod-text small{font-size:12px;color:var(--muted)}
+.prod-text b{font-size:clamp(15px,1.8vw,18px);color:var(--accent)}
+.prod-link svg{width:22px;height:22px;flex-shrink:0;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sched{display:flex;align-items:center;justify-content:space-between;gap:24px 48px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,48px)}
+.sched-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:17px;min-height:52px;padding:12px 32px;border-radius:999px}
+.sched-btn:hover{filter:brightness(.92)}
+.sched-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:760px){.sched-btn{width:100%;justify-content:center}}
 .sources{font-size:12px;color:var(--muted);line-height:1.7}
 
 /* key */
@@ -581,11 +592,28 @@ p,dd,figcaption,.goose,.ref b,.ref span{text-wrap:pretty}
       <p style="font-weight:700">私自身もゴールドリボン運動に毎月1,000円を募金し、街頭募金活動にも参加しています。</p>
     </div>
 
+    <a class="prod-link" href="https://www.aflac.co.jp/gan/miraito/kids.html" target="_blank" rel="noopener">
+      <span class="prod-text"><small>アフラック公式サイト</small><b>子ども向けがん保険「ミライトキッズ」の商品ページを見る</b></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+    </a>
+
     <p class="sources">出典：国立がん研究センターがん情報サービス「がん統計」（全国がん登録）／全国がん登録 2016年診断例（5年純生存率）／厚生労働省「小児がん拠点病院の指定について」（2023年4月〜2027年3月の指定）／小児慢性特定疾病情報センター（自己負担上限月額／2026年時点）。<span class="nw">制度は改定される場合があります。</span></p>
     <p class="info-end">小児がんに関する情報はここまでです</p>
   </div>
 </section>
 
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="sched">
+      <div class="sec-head"><span class="eyebrow">SCHEDULE</span><h2>1to1の日程調整</h2><p>空いている日時からお選びいただけます。オンライン・対面どちらでも大丈夫です。</p></div>
+      <a class="sched-btn" href="https://timerex.net/s/m.saito1248_f91f/0a5db04b" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        日程を予約する
+      </a>
+    </div>
+  </div>
+</section>
 
 <section id="intro" class="alt">
   <div class="wrap">
